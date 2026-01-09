@@ -38,11 +38,12 @@ class P2
 		Dy=(a*f)-(c*e);
 		
 
-                if(D==0){
-                System.out.println("Arithmetic Exception");
-		}
+      if(D==0)
+	  {
+      System.out.println("Arithmetic Exception");
+	  }
 
-		else
+	   else
 		{
 		x=Dx/D;
 		y=Dy/D;  
@@ -51,5 +52,6 @@ class P2
 		}
 
 	}
+
 
 }
