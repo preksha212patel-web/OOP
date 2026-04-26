@@ -1,0 +1,37 @@
+class TablePrinter {
+	synchronized void printTable(int n) {
+		for (int i = 1; i <= 10; i++) {
+			System.out.println(n + " x " + i + " = " + (n * i));
+			try {
+				Thread.sleep(100);
+			} catch (InterruptedException e) {
+				System.out.println(e);
+ 			}
+ 		}
+ 		System.out.println();
+	}
+}
+
+class MyThread extends Thread {
+	TablePrinter t;
+ 	int number;
+ 	MyThread(TablePrinter t, int number) {
+ 		this.t = t;
+ 		this.number = number;
+ 	}
+ 	public void run() {
+ 		t.printTable(number);
+ 	}
+}
+
+class SyncTableDemo {
+ 	public static void main(String[] args) {
+ 		System.out.println("Preksha Patel");
+		System.out.println("240390107031");
+ 		TablePrinter obj = new TablePrinter();
+ 		MyThread t1 = new MyThread(obj, 5);
+ 		MyThread t2 = new MyThread(obj, 7);
+ 		t1.start();
+		t2.start();
+ 	}
+}
